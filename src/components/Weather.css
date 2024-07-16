@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #4A90E2, #72C6EF);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #1c1c1c;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    width: 500px;
+    height: 800px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 12px;
+    margin: 75px auto;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.city {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-top: 50px;
+}
+
+.city input {
+    width: 270px;
+    height: 60px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    padding-left: 20px;
+    border-radius: 40px;
+    box-shadow: 7px 4px 15px rgba(0, 0, 0, 0.34);
+    font-size: 15px;
+    color: #1c1c1c;
+    transition: box-shadow 0.3s;
+}
+
+.city input:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+/*.city input:focus,
+.city input:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+    If i wanna create a hover effect
+}*/
+.city button {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 7px 4px 15px rgba(0, 0, 0, 0.34);
+    font-size: 18px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.city button:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.error-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1c1c1c;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-image {
+    text-transform: capitalize;
+    color: #1c1c1c;
+}
+
+.weather-image img {
+    width: 70%;
+    height: 70%;
+    margin: 10px auto 0;
+    border-radius: 12px;   
+}
+
+.weather-image .desc {
+    font-size: 30px;
+    text-align: center;
+    margin: 0 0 5px;
+}
+
+.weather-temp {
+    color: #40A2E3;
+    text-align: center;
+    font-size: 50px;
+    margin: 25px 0 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.weather-city {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1c1c1c;
+    font-weight: 500;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.weather-city .location {
+    color: #40A2E3;
+    margin-top: 8px;
+    font-size: 30px;
+    padding-right: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.weather-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    margin-top: 50px;
+}
+
+.weather-stats .wind, .weather-stats .humidity {
+    background-color: #40A2E3;
+    width: 180px;
+    height: 150px;
+    border-radius: 15px;
+    box-shadow: 4px 3px 10px rgba(0, 0, 0, 0.34);
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.weather-stats .wind:hover, .weather-stats .humidity:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.weather-stats .wind-icon, .weather-stats .humidity-icon {
+    color: #fff;
+    font-size: 50px;
+}
+
+.weather-stats .wind-speed, .weather-stats .humidity-percent {
+    color: #fff;
+    font-weight: 700;
+}
+
+.weather-stats .wind-heading, .weather-stats .humidity-heading {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 23px;
+}
